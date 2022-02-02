@@ -84,7 +84,7 @@ h1,h2{
     right: -350%;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.5s ease;
+    transition: opacity 0.5s linear;
 }
 .options.show{
     opacity: 1;
@@ -120,4 +120,59 @@ h1,h2{
 }
 .share-btn .share-icon path{
     fill: var(--desaturated-dark-blue)
+}
+
+@media screen and (max-width: 991px){
+    .card {
+        flex-direction: column;
+        max-width: 375px;
+        position: relative;
+    }
+    .card .img img{
+        width: 100%;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    .img-author img{
+        width: 50px;
+    }
+    h1{
+        font-size: 18px;
+    }
+    h2{
+        font-size: inherit;
+       
+    }
+    .options{
+        justify-content: start;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        padding: 30px 20px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+    .options *{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .options::before{
+        content:'';
+        display: none;
+    }
+    .text{
+        padding: 20px;
+        padding-bottom: 0;
+    }
+    .author-sharebtn {
+        padding-bottom: 10px;
+    }
+    .wrapper-sharebtn {
+        position: static;
+    }
+    .share-btn{
+        z-index: 2;
+        position: relative;
+        top: 3px;
+    }
 }
